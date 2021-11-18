@@ -29,7 +29,14 @@
 #pragma once
 
 #include <cmath>
+#if defined(__APPLE__)
+#include <OpenGL/gl.h>
+#include <OpenGL/glu.h>
+#else
 #include <GL/gl.h>
+#include <GL/glu.h>
+#endif
+
 
 #define PIdiv180 GLfloat(3.1415265359)/GLfloat(180.0)
 

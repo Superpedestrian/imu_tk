@@ -29,7 +29,7 @@
 #include <QtOpenGL>
 #include <QMutexLocker>
 
-#include <GL/glut.h>
+#include <GLUT/glut.h>
 
 #include <typeinfo>
 #include <math.h>
@@ -374,9 +374,9 @@ void OpenGL3DScene::updateStructure( std::string name, bool update_gl )
 
       qglColor ( a_item.color );
 
-      GLfloat mat_ambient[] = { a_item.color.redF(), a_item.color.greenF(), a_item.color.blueF(), 1.0f };
-      GLfloat mat_diffuse[] = { a_item.color.redF() /2.0f, a_item.color.greenF() /2.0f,
-                                a_item.color.blueF() /2.0f, 1.0f };
+      GLfloat mat_ambient[] = { static_cast<GLfloat>(a_item.color.redF()), static_cast<GLfloat>(a_item.color.greenF()), static_cast<GLfloat>(a_item.color.blueF()), 1.0f };
+      GLfloat mat_diffuse[] = { static_cast<GLfloat>(a_item.color.redF() /2.0f), static_cast<GLfloat>(a_item.color.greenF() /2.0f),
+                                static_cast<GLfloat>(a_item.color.blueF() /2.0f, 1.0f) };
       glMaterialfv ( GL_FRONT, GL_AMBIENT, mat_ambient );
       glMaterialfv ( GL_FRONT, GL_DIFFUSE, mat_diffuse );
 

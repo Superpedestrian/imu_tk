@@ -29,7 +29,14 @@
 #include "imu_tk/vis_extra/gl_camera.h"
 
 #include <math.h>
+#if defined(__APPLE__)
+#include <OpenGL/gl.h>
+#include <OpenGL/glu.h>
+#else
+#include <GL/gl.h>
 #include <GL/glu.h>
+#endif
+
 
 GLCamera::GLCamera()
 {
@@ -193,6 +200,3 @@ float GLCameraUtils::operator * ( Vector3D v, Vector3D u )
 {
   return v.x*u.x+v.y*u.y+v.z*u.z;
 }
-
-
-

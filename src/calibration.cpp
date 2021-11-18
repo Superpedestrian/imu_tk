@@ -409,5 +409,5 @@ template <typename _T>
   return true;
 }
 
-template class MultiPosCalibration_<double>;
-template class MultiPosCalibration_<float>;
+template class imu_tk::MultiPosCalibration_<double>;
+template class imu_tk::MultiPosCalibration_<float>;

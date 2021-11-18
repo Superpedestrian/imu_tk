@@ -38,7 +38,14 @@
 #include <Eigen/Geometry>
 
 #include <limits>
+#if defined(__APPLE__)
+#include <OpenGL/gl.h>
+#include <OpenGL/glu.h>
+#else
+#include <GL/gl.h>
 #include <GL/glu.h>
+#endif
+
 #include "gl_camera.h"
 
 /** @brief This class provides to the visualization inside a QWidget of simple 3D structures,
