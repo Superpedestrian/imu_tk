@@ -1,6 +1,6 @@
 #!bash
 
-brew install cmake ceres-solver eigen boost cartr/qt4/pyqt@4
+brew install cmake ceres-solver eigen boost cartr/qt4/pyqt@4 gnuplot
 brew unlink qt
 brew link --overwrite qt@4
 
